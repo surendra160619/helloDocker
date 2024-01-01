@@ -40,7 +40,7 @@ pipeline {
     stages {
         stage('Cloning our Git') {
             steps {
-                git 'https://github.com/surendra160619/helloDocker.git', branch: 'main'
+             git url: 'https://github.com/surendra160619/helloDocker.git', branch: 'main'
             }
         }
 
