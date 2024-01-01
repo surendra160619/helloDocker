@@ -2,7 +2,7 @@ node {
     // reference to maven
     // ** NOTE: This 'maven-3.6.1' Maven tool must be configured in the Jenkins Global Configuration.   
    // def mvnHome = tool 'maven-3.9.6'
-  def  MVN_HOME = tool 'maven-3.9.6'
+  def  Maven = tool 'maven-3.9.6'
 
     // holds reference to docker image
     def dockerImage
@@ -18,12 +18,12 @@ node {
       // Get the Maven tool.
       // ** NOTE: This 'maven-3.6.1' Maven tool must be configured
       // **       in the global configuration.           
-      MVN_HOME = tool 'maven-3.9.6'
+      Maven = tool 'maven-3.9.6'
     }    
   
     stage('Build Project') {
       // build project via maven
-      sh "'${MVN_HOME}/bin/mvn' -Dmaven.test.failure.ignore clean package"
+      sh "'${Maven}/bin/mvn' -Dmaven.test.failure.ignore clean package"
     }
 	
 	stage('Publish Tests Results'){
