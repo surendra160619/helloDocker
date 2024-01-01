@@ -30,7 +30,8 @@ pipeline {
                 script {
                     // Use the 'maven' label to let Jenkins automatically choose a Maven installation
                     def mvnHome = tool 'maven'
-                    // Add your Docker deployment steps here
+                    sh "mv ./target/helloDocker*.jar ./data" 
+                   dockerImage = docker.build("hello-world-java")
                 }
             }
         }
