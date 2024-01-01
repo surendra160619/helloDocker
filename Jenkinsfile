@@ -11,26 +11,23 @@
 	git 'https://github.com/surendra160619/helloDocker.git'
 	}
 	}
-	stage('Building our image') {
-	steps{
-	script {
-	dockerImage = docker.build registry + ":$BUILD_NUMBER"
-	}
-	}
-	}
-	stage('Deploy our image') {
-	steps{
-	script {
-	docker.withRegistry( '', registryCredential ) {
-	dockerImage.push()
-	}
-	}
-	}
-	}
-	stage('Cleaning up') {
-	steps{
-	sh "docker rmi $registry:$BUILD_NUMBER"
-	}
-	}
+    stage('build docker image') {
+      steps {
+        sh 'docker build -t sk4586059/hellodocker:latest .'
+      }
+    }
+    stage('push docker image') {
+      steps {
+        script {
+          //withCredentials([string(credentialsId: 'dockerhub_token', variable: 'dockerhub_token')]) {
+          sh 'docker login -u sk4586059 -p  dckr_pat_d5Dv5KfwJ5kMTsQvMu7HOFyM2to'
+          sh 'docker push sk4586059/hellodocker:latest'
+          //}
+        }
+      }
+    }
+
+
+
 	}
 	}
