@@ -8,8 +8,7 @@
 	stages {
 	stage('Cloning our Git') {
 	steps {
-	git branch: 'main'
-	git 'https://github.com/surendra160619/helloDocker.git'
+	 git url: 'https://github.com/surendra160619/helloDocker.git', branch: 'main'
 	}
 	}
     stage('build docker image') {
