@@ -1,7 +1,7 @@
 pipeline {
     agent any
     
-    def dockerRepoUrl = "https://hub.docker.com/repository/docker/sk4586059/hellodocker"
+    def dockerRepoUrl = "https://hub.docker.com/r/sk4586059/hellodocker"
     def dockerImageName = "hello-world-java"
     def dockerImageTag = "${dockerRepoUrl}/${dockerImageName}:${env.BUILD_NUMBER}"
     
