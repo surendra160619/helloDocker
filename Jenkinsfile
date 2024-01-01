@@ -32,7 +32,7 @@
 pipeline {
     environment {
         registry = "sk4586059/hellodocker"
-        registryCredential = 'dockerhub'
+        registryCredential = 'jankins'
         dockerImage = ''
     }
     agent any
