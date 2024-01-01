@@ -53,8 +53,8 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    withCredentials([string(credentialsId: 'dckr_pat_d5Dv5KfwJ5kMTsQvMu7HOFyM2to', variable: 'dckr_pat_d5Dv5KfwJ5kMTsQvMu7HOFyM2to')]) {
-                      bat 'docker login -u sk4586059 -p $dckr_pat_d5Dv5KfwJ5kMTsQvMu7HOFyM2to'
+                    withCredentials([string(credentialsId: 'dckr_pat_cqU-QkMscvD2U5fnpz6MR7wN9yU', variable: 'dckr_pat_cqU-QkMscvD2U5fnpz6MR7wN9yU')]) {
+                      bat 'docker login -u sk4586059 -p $dckr_pat_cqU-QkMscvD2U5fnpz6MR7wN9yU'
                      bat 'docker push sk4586059/hellodocker:latest'
                     }
                 }
