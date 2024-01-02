@@ -41,7 +41,7 @@ pipeline {
         stage('Cloning our Git') {
             steps {
              git url: 'https://github.com/surendra160619/helloDocker.git', branch: 'main'
-             sh 'mvn clean install'
+             
             }
         }
 
