@@ -50,17 +50,24 @@ pipeline {
             }
         }
 
-        stage('Push Docker Image') {
-            steps {
-             script {
-          withCredentials([string(credentialsId: 'sk4586059', variable: 'dckr_pat_igMVdXAxnjvNgtb4FSukBtpa70c')]) {
-        bat 'docker login -u sk4586059 -p %dckr_pat_igMVdXAxnjvNgtb4FSukBtpa70c%'
-        bat 'docker pull library/openjdk'
-        bat 'docker tag library/openjdk sk4586059/hellodocker:latest'
-        bat 'docker push sk4586059/hellodocker:latest'
-    }
-}
+  stage('Push Docker Image') {
+    steps {
+        script {
+            withCredentials([string(credentialsId: 'dockerhub', variable: 'krishna@meena45')]) {
+                // Log in to Docker Hub
+                bat "docker login -u sk4586059 -p \$krishna@meena45"
+                
+                // Pull the base image (if needed)
+                bat "docker pull library/openjdk:17"
+
+                // Tag the pulled image
+                bat "docker tag library/openjdk sk4586059/hellodocker:latest"
+
+                // Push the tagged image to Docker Hub
+                bat "docker push sk4586059/hellodocker:latest"
             }
         }
+    }
+}
     }
 }
