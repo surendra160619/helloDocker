@@ -53,9 +53,9 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    withCredentials([string(credentialsId: 'dckr_pat_cqU-QkMscvD2U5fnpz6MR7wN9yU', variable: 'dckr_pat_cqU-QkMscvD2U5fnpz6MR7wN9yU')]) {
-                      bat 'docker login -u sk4586059 -p $dckr_pat_cqU-QkMscvD2U5fnpz6MR7wN9yU'
-                      bat 'docker pull -u sk4586059 -p $dckr_pat_cqU-QkMscvD2U5fnpz6MR7wN9yU library/openjdk'
+                    withCredentials([string(credentialsId: 'dckr_pat_4rfqNSVuhcRwSK_uYcUkDEtCnHA', variable: 'dckr_pat_4rfqNSVuhcRwSK_uYcUkDEtCnHA')]) {
+                      bat 'docker login -u sk4586059 -p $dckr_pat_4rfqNSVuhcRwSK_uYcUkDEtCnHA'
+                      bat 'docker pull -u sk4586059 -p $dckr_pat_4rfqNSVuhcRwSK_uYcUkDEtCnHA library/openjdk'
                      bat 'docker push sk4586059/hellodocker:latest'
                     }
                 }
