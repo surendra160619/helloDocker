@@ -53,15 +53,16 @@ pipeline {
   stage('Push Docker Image') {
     steps {
  script {
-    withCredentials([string(credentialsId: 'dockerhub', variable: 'sk4586059')]) {
+    withCredentials([string(credentialsId: 'dockerhub', variable: 'dckr_pat_4vhn3-w8bQvprt740HNyStBaufc')]) {
         // Log in to Docker Hub
-        bat "docker login -u sk4586059 -p \"krishna@meena45\""
+      
+        bat " docker login -u your_username -p Krishna@meena45"
         
         // Pull the base image (if needed)
-        bat "docker pull library/openjdk:11"
+        bat "docker pull library/openjdk:17"
 
         // Tag the pulled image
-        bat "docker tag library/openjdk:11 sk4586059/hellodocker:latest"
+        bat "docker tag library/openjdk:17 sk4586059/hellodocker:latest"
 
         // Push the tagged image to Docker Hub
         bat "docker push sk4586059/hellodocker:latest"
