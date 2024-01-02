@@ -46,7 +46,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                bat 'docker build -t sk4586059/hellodocker:latest .'
+                bat 'docker build -t sk4586059/hellodocker .'
             }
         }
 
