@@ -1,15 +1,11 @@
-
-#FROM openjdk:17
-#EXPOSE 8081
-
-#ADD target/helloDocker.jar helloDocker.jar
-#COPY target/helloDocker.jar hello.jar
-
-#CMD ["java", "-jar", "/helloDocker.jar"]
-
-
-
+# Use the official OpenJDK 17 image as a base image
 FROM openjdk:17
+ 
+# Copy the JAR file to the container
+COPY target/helloDocker.jar hello.jar
+ 
+# Expose port 9092
 EXPOSE 8081
-ADD target/helloDocker.jar helloDocker.jar
-ENTRYPOINT ["java","-jar","/helloDocker.jar"]
+ 
+# Specify the command to run when the container starts
+CMD ["java", "-jar", "hello.jar"]
