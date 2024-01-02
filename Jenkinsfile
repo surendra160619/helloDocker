@@ -59,7 +59,7 @@ pipeline {
         bat " docker login -u your_username -p Krishna@meena45"
         
         // Pull the base image (if needed)
-        bat "docker pull library/openjdk:17"
+        bat "docker pull library/openjdk:17 sk4586059/hellodocker"
 
         // Tag the pulled image
         bat "docker tag library/openjdk:17 sk4586059/hellodocker:latest"
