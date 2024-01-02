@@ -62,10 +62,10 @@ pipeline {
         bat "docker pull library/openjdk:17 sk4586059/hellodocker"
 
         // Tag the pulled image
-        bat "docker tag library/openjdk:17 sk4586059/hellodocker:latest"
+        bat "docker tag library/openjdk:17 sk4586059/hellodocker ."
 
         // Push the tagged image to Docker Hub
-        bat "docker push sk4586059/hellodocker:latest"
+        bat "docker push sk4586059/hellodocker ."
     }
 }
     }
