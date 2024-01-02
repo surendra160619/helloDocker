@@ -8,4 +8,4 @@
 #EXPOSE 8081
  
 # Specify the command to run when the container starts
-#CMD ["java", "-jar", "hello.jar"]
+CMD ["java", "-jar", "hello.jar"]
