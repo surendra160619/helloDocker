@@ -1,6 +1,8 @@
 # Use the official OpenJDK 17 image as a base image
 FROM openjdk:17
  
+ 
+ FROM docker.io/openjdk:17
 # Copy the JAR file to the container
 COPY target/helloDocker.jar hello.jar
  
