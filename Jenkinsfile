@@ -44,9 +44,10 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Build') {
             steps {
-                bat 'docker build -t sk4586059/hellodocker .'
+                //bat 'docker build -t sk4586059/hellodocker .'
+                 bat 'mvn clean install'
             }
         }
 
@@ -57,7 +58,7 @@ pipeline {
         // Log in to Docker Hub
       
         bat " docker login -u your_username -p Krishna@meena45"
-        
+        bat 'docker build -t sk4586059/hellodocker .'
         // Pull the base image (if needed)
         bat "docker pull library/openjdk:17 sk4586059/hellodocker"
 
