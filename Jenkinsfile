@@ -53,7 +53,7 @@ pipeline {
   stage('Push Docker Image') {
     steps {
  script {
-    withCredentials([string(credentialsId: 'dockerhub', variable: 'sk458059')]) {
+    withCredentials([string(credentialsId: 'dckr_pat_mEPY0OcrVD33pLlITuzMEUe_mHg', variable: 'sk458059')]) {
         // Log in to Docker Hub
       
         bat " docker login -u your_username -p Krishna@meena45"
