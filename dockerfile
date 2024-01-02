@@ -2,8 +2,9 @@
 FROM openjdk:17
  
 # Copy the JAR file to the container
-COPY https://hub.docker.com/repositories/sk4586059/hellodocker.jar hello.jar
- 
+#COPY target/helloDocker.jar hello.jar
+ COPY --from=build /helloDocker/target/hello.jar ./
+ COPY --from=build /helloDocker/target/libs ./libs
 # Expose port 9092
 EXPOSE 8081
  
