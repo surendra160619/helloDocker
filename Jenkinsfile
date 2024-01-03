@@ -34,7 +34,7 @@ pipeline {
         registry = "sk4586059/hellodocker"
         registryCredential = 'jankins'
         dockerImage = ''
-        def mvnHome = tool 'maven-3.8.5'
+        def mvnHome = tool 'Maven3-3.8.6'
     }
     agent any
 
