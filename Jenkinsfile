@@ -11,7 +11,7 @@ pipeline {
   
  		tools {
         maven 'Maven3'
-        jdk 'openJDK17'
+       // jdk 'openJDK17'
     }
     stages {
         stage('Cloning our Git') {
