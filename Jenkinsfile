@@ -31,11 +31,11 @@ pipeline {
          stage('Push Docker Image') {
        steps {
 	   script {
-	    withCredentials([string(credentialsId: 'Krishna@meena45', variable: 'sk4586059')]) {
+	    withCredentials([string(credentialsId: 'K********', variable: 's*******')]) {
 		
 		
 		  
-			bat 'docker login -u sk4586059 -p Krishna@meena45'
+			bat 'docker login -u sk*** -p K**45'
 			
 			// Pull the base image (if needed)
 			bat 'docker pull  sk4586059/hellodocker'
