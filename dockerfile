@@ -1,11 +1,11 @@
 # Use the official OpenJDK 17 image as a base image
-FROM openJDK:17
+FROM openjdk:17
 
 # Copy the JAR file to the container
-COPY target/helloDocker.jar hellodocker.jar
+COPY target/helloDocker.jar helloDocker.jar
  
 # Expose port 9092
-EXPOSE 8081
+EXPOSE 9092
  
 # Specify the command to run when the container starts
-CMD ["java", "-jar", "hellodocker.jar"]
+CMD ["java", "-jar", "helloDocker.jar"]
