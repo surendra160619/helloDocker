@@ -2,7 +2,7 @@
 FROM openjdk:17
   WORKDIR /a
 # Copy the JAR file to the container
-COPY target/helloDocker.jar hellodocker.jar
+ADD  target/helloDocker.jar hellodocker.jar
  
 # Expose port 9092
 EXPOSE 8081
