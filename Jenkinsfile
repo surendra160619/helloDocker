@@ -39,7 +39,6 @@ pipeline {
     agent any
  tools {
         maven 'Maven3'
-         jdk 'jdk17' 
     }
     stages {
         stage('Cloning our Git') {
