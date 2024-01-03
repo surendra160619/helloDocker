@@ -2,12 +2,13 @@
 pipeline {
     
     agent any
-     def dockerRepoUrl = "localhost:8081"
-    def dockerImageName = "hellodocker"
-    def dockerImageTag = "${dockerRepoUrl}/${dockerImageName}:${env.BUILD_NUMBER}"
+   
 	tools {
         maven 'Maven3'
         jdk 'jdk17'
+      def dockerRepoUrl = 'localhost:8081'
+    def dockerImageName = 'hellodocker'
+    def dockerImageTag = '${dockerRepoUrl}/${dockerImageName}:${env.BUILD_NUMBER}'
     }
         stages {
     
