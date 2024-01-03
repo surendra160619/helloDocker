@@ -34,10 +34,12 @@ pipeline {
         registry = "sk4586059/hellodocker"
         registryCredential = 'jankins'
         dockerImage = ''
-	def mvnHome = 'Maven3'
+	
     }
     agent any
-
+ tools {
+    maven 'Maven3'
+  }
     stages {
         stage('Cloning our Git') {
             steps {
@@ -49,7 +51,7 @@ pipeline {
 			    steps {
 			        // Assuming Maven is installed on the Jenkins agent
 			      //  bat 'docker.io/maven:3.6-mvn clean install'
-			        bat "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
+			        bat "mvn clean install"
 			        //sh 'mvn -B'
 			    }
 			}
