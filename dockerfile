@@ -1,5 +1,5 @@
 # Use the official OpenJDK 17 image as a base image
-FROM openjdk:17
+FROM docker.io/maven:3.6-jdk-11 as build
  
  WORKDIR /rajkosh3.0
 
