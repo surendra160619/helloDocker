@@ -24,6 +24,8 @@ pipeline {
 		 stage('Build Docker Image') {
             steps {
                 bat 'docker build -t sk4586059/hellodocker .'
+                 // Push Docker image to Docker Hub
+                bat 'docker push sk4586059/hellodocker'
             }
         }
         
