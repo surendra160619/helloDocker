@@ -32,7 +32,7 @@ pipeline {
          stage('Push Docker Image') {
        steps {
 	   script {
-	    withCredentials([string(credentialsId: 'dckr_pat_nAK0kSmwHuNPDmMH4CdVFL9EL-0', variable: 'sk458659')]) {
+	    withCredentials([string(credentialsId: 'Krishna@meena45', variable: 'sk4586059')]) {
 		
 		
 		  
