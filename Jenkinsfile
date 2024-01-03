@@ -2,6 +2,9 @@
 pipeline {
     
     agent any
+     def dockerRepoUrl = "localhost:8081"
+    def dockerImageName = "hellodocker"
+    def dockerImageTag = "${dockerRepoUrl}/${dockerImageName}:${env.BUILD_NUMBER}"
 	tools {
         maven 'Maven3'
         jdk 'jdk17'
@@ -26,28 +29,19 @@ pipeline {
                 bat 'docker build -t sk4586059/hellodocker .'
             }
         }
-
-  stage('Push Docker Image') {
-    steps {
- script {
-   // withCredentials([string(credentialsId: 'Krishna@meena45', variable: 'sk458059')]) {
-        // Log in to Docker Hub
-    withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'Krishna@meena45', usernameVariable: 'sk4586059')]) 
-    {
-      
-        bat 'docker login -u sk4586059 -p Krishna@meena45'
         
-        // Pull the base image (if needed)
-        bat 'docker pull  sk4586059/hellodocker'
+            stage('Deploy Docker Image'){
+      
+      // deploy docker image to nexus
 
-        // Tag the pulled image
-        bat 'docker tag  sk4586059/hellodocker:latest'
+      echo "Docker Image Tag Name: ${dockerImageTag}"
+      bat 'docker login -u sk4586059 -p Krishna@meena45  ${dockerRepoUrl}'
+      bat 'docker push sk4586059/hellodocker .'
+    }
+        
+        
+        
 
-        // Push the tagged image to Docker Hub
-        bat 'docker push sk4586059/hellodocker:latest'
-    }
-}
-    }
-}
+
     }
 }
