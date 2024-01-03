@@ -2,13 +2,9 @@
 pipeline {
     
     agent any
-   
 	tools {
         maven 'Maven3'
         jdk 'jdk17'
-      def dockerRepoUrl = 'localhost:8081'
-    def dockerImageName = 'hellodocker'
-    def dockerImageTag = '${dockerRepoUrl}/${dockerImageName}:${env.BUILD_NUMBER}'
     }
         stages {
     
@@ -32,17 +28,9 @@ pipeline {
         }
         
             stage('Deploy Docker Image'){
-      
-      // deploy docker image to nexus
-
-      echo "Docker Image Tag Name: ${dockerImageTag}"
-      bat 'docker login -u sk4586059 -p Krishna@meena45  ${dockerRepoUrl}'
-      bat 'docker push sk4586059/hellodocker .'
-    }
-        
-        
-        
-
+ 			bat 'docker login -u sk4586059 -p Krishna@meena45'
+			 bat 'docker push sk4586059/hellodocker:latest'
+                }
 
     }
 }
