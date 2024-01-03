@@ -37,10 +37,7 @@ pipeline {
 	
     }
     agent any
- tools {
-    maven 'Maven 3.8.6' 
-        //jdk 'jdk17' 
-    }
+
     stages {
         stage('Cloning our Git') {
             steps {
@@ -52,8 +49,9 @@ pipeline {
 			    steps {
 			        // Assuming Maven is installed on the Jenkins agent
 			      //  bat 'docker.io/maven:3.6-mvn clean install'
+			     bat 'docker.io/maven:3.8.6-jdk-17 as mvn clean install'
 			      
-			          bat "mvn clean install"
+			         
 			    
 			    }
 			}
