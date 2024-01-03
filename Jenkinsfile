@@ -39,6 +39,7 @@ pipeline {
     agent any
  tools {
         maven 'Maven3'
+         jdk 'jdk17' 
     }
     stages {
         stage('Cloning our Git') {
@@ -51,7 +52,7 @@ pipeline {
 			    steps {
 			        // Assuming Maven is installed on the Jenkins agent
 			      //  bat 'docker.io/maven:3.6-mvn clean install'
-			     bat 'mvn package -Dmaven.test.skip'
+			   bat "mvn clean install -DskipTests"
 			      
 			         
 			    
