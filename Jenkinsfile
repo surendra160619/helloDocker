@@ -1,25 +1,19 @@
 
 pipeline {
-    environment {
-        registry = "sk4586059/hellodocker"
-        registryCredential = 'jankins'
-        dockerImage = ''
-	   mavenHome = tool 'Maven3'
-    }
-    agent any
     
-  
- 		tools {
+    agent any
+	tools {
         maven 'Maven3'
        // jdk 'openJDK17'
     }
-    stages {
+        stages {
+    
 
 			stage('Build') {
 			    steps { 
 			   bat 'mvn -Dmaven.test.failure.ignore=true install'
-}
-			}
+					}
+			  }
 			
 		stage('Test'){
 			steps{
