@@ -14,12 +14,7 @@ pipeline {
        // jdk 'openJDK17'
     }
     stages {
-        stage('Cloning our Git') {
-            steps {
-             git url: 'https://github.com/surendra160619/helloDocker.git', branch: 'main'
-             
-            }
-        }
+       
 			stage('Build') {
 			    steps { 
 			   bat 'mvn clean install -DskipTests'
