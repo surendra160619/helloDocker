@@ -14,6 +14,6 @@ FROM openjdk:17
 
 
 ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} hellodocker.jar
+COPY ${JAR_FILE} helloDocker-0.0.1-SNAPSHOT.jar
 EXPOSE 8081
-ENTRYPOINT ["java","-jar","/hellodocker.jar"]
+ENTRYPOINT ["java","-jar","/helloDocker-0.0.1-SNAPSHOT.jar"]
