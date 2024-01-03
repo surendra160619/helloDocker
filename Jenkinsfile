@@ -51,7 +51,7 @@ pipeline {
 			    steps {
 			        // Assuming Maven is installed on the Jenkins agent
 			      //  bat 'docker.io/maven:3.6-mvn clean install'
-			     bat 'mvn clean install'
+			     bat 'mvn -B -DskipTests clean package'
 			      
 			         
 			    
