@@ -25,6 +25,13 @@ pipeline {
 			   bat 'mvn clean install -DskipTests'
 }
 			}
+			
+		stage('Test'){
+			steps{
+				bat "mvn test"
+			}
+		}	
+			
 		 stage('Build Docker Image') {
             steps {
                 bat 'docker build -t sk4586059/hellodocker .'
