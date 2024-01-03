@@ -4,7 +4,7 @@ pipeline {
         registry = "sk4586059/hellodocker"
         registryCredential = 'jankins'
         dockerImage = ''
-	
+	   mavenHome = tool 'Maven3'
     }
     agent any
     
@@ -14,10 +14,10 @@ pipeline {
        // jdk 'openJDK17'
     }
     stages {
-       
+
 			stage('Build') {
 			    steps { 
-			   bat 'mvn clean install -DskipTests'
+			   bat '-B -DskipTests clean package'
 }
 			}
 			
