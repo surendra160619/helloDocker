@@ -47,7 +47,7 @@ pipeline {
 			stage('Maven Build') {
 			    steps {
 			        // Assuming Maven is installed on the Jenkins agent
-			        bat 'mvn clean install'
+			        bat 'docker.io/maven:3.6-mvn clean install'
 			    }
 			}
 
