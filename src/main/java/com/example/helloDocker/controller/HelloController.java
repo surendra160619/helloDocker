@@ -1,14 +1,9 @@
 package com.example.helloDocker.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.example.helloDocker.service.HelloService;
-@RestController
-
+//@RestController
 public class HelloController {
-@Autowired
-HelloService helloService;
+//@Autowired
+//HelloService helloService;
 
 //@PostMapping("app")
 //public ResponseEntity<?> getAllTutorials(@RequestBody String data) {
