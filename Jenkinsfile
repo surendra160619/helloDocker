@@ -23,7 +23,7 @@ pipeline {
 			
 		 stage('Build Docker Image') {
             steps {
-                bat 'docker build -t hellodocker .'
+                bat 'docker build -t sk4586059/hellodocker .'
               
             }
         }
@@ -35,13 +35,13 @@ pipeline {
                     bat 'docker login -u sk4586059 -p Krishna@meena45'
 			
 			// Pull the base image (if needed)
-			bat 'docker pull  hellodocker'
+			bat 'docker pull  sk4586059/hellodocker'
 
 			// Tag the pulled image
 			//bat 'docker tag  sk4586059/hellodocker:latest'
 
 			// Push the tagged image to Docker Hub
-			bat 'docker push hellodocker:latest'
+			bat 'docker push sk4586059/hellodocker:latest'
               }
 		  
 			
