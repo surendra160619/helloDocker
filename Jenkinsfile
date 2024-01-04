@@ -35,7 +35,7 @@ pipeline {
                     bat 'docker login -u sk4586059 -p Krishna@meena45'
 			
 			// Pull the base image (if needed)
-		//	bat 'docker pull  sk4586059/hellodocker'
+			bat 'docker pull  sk4586059/hellodocker'
 
 			// Tag the pulled image
 			//bat 'docker tag  sk4586059/hellodocker:latest'
