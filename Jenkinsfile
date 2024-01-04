@@ -41,7 +41,7 @@ pipeline {
 			//bat 'docker tag  sk4586059/hellodocker:latest'
 
 			// Push the tagged image to Docker Hub
-			bat 'docker push sk4586059/hellodocker:latest'
+			bat 'docker push hellodocker:latest'
               }
 		  
 			
