@@ -30,9 +30,7 @@ pipeline {
         
          stage('Push Docker Image') {
        steps {
-	   script {
-	    withCredentials([string(credentialsId: 'dckr_pat_nAK0kSmwHuNPDmMH4CdVFL9EL-0', variable: 'sk4586059')]) {
-		
+	   
 		
 		  
 			bat 'docker login -u sk4586059 -p Krishna@meena45'
@@ -45,8 +43,8 @@ pipeline {
 
 			// Push the tagged image to Docker Hub
 			bat 'docker push sk4586059/hellodocker:latest'
-		}
-	}
+		
+
   }
   }
 }
