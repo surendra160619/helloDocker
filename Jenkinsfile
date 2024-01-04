@@ -39,7 +39,7 @@ pipeline {
 			
 			// Pull the base image (if needed)
 			bat 'docker pull  sk4586059/hellodocker'
-           bat 'docker run sk4586059/hellodocker:latest'
+
 			// Tag the pulled image
 			//bat 'docker tag  sk4586059/hellodocker:latest'
 
